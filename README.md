@@ -1,75 +1,34 @@
-# React + TypeScript + Vite
+# RRT
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+RRT(React + Redux + Typescript) - решение задач для практического изучения redux, работы с API, создания кастомных селектов, знакомоство с библиотекой react-select
 
-Currently, two official plugins are available:
+## Ключевые особенности и решения
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+*   **работа с нативным redux:** 
+*   **список дел с пагинацией:** 
+*   **реализация бесконечного скролла:**
+*   **разработка кастомных селектов(с одним выбором, с множественным выбором):** 
+*   **фильтрация с сортировкой списка:**
+*   **создание ранее реализованных селектов через библиотеку react-select:** 
 
-## React Compiler
+## Технологический стек
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+*   **React**
+*   **Redux**
+*   **Typescript** 
+*   **React Select**
 
-Note: This will impact Vite dev & build performances.
+## Локальный запуск проекта
 
-## Expanding the ESLint configuration
+git clone [(https://github.com/Alexey917/neobank.git)](https://github.com/Alexey917/neobank.git)
+cd my-app
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Запуск фронта
+npm install && npm run dev
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Контакты
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Вы можете связаться со мной через следующие платформы:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+<a href="https://vk.com/id321802975"><img src="https://github.com/Alexey917/Alexey917/blob/main/assets/vk.png" width="32" height="32" /></a>
+<a href="https://t.me/Alexey917"><img src="https://github.com/Alexey917/Alexey917/blob/main/assets/tg.png" width="32" height="32" /></a>
