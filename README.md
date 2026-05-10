@@ -1,75 +1,86 @@
-# React + TypeScript + Vite
+# 📦 RRT
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**RRT (React + Redux + TypeScript)** — учебный проект для практического изучения Redux, работы с API, создания кастомных селектов и знакомства с библиотекой `react-select`.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🎯 Проект по STAR
 
-## React Compiler
+| | |
+|---|---|
+| **Situation** | Требовалось на практике освоить связку React + Redux + TypeScript, научиться работать с API, сортировкой и фильтрацией данных. |
+| **Task** | Изучить нативный Redux, создать собственный кастомный селект, интегрировать API, реализовать пагинацию, бесконечный скролл, фильтрацию и сортировку данных. |
+| **Action** | Созданы редьюсеры и типизированные экшены; написаны кастомные хуки для типизированного `useSelector` и `useAction`; данные из API сохраняются в Redux; реализованы пагинация и бесконечный скролл (IntersectionObserver); разработаны кастомные селекты (одиночный и множественный выбор); изучена библиотека `react-select`; добавлены фильтрация (поиск по полю) и сортировка данных. |
+| **Result** | Получено 4 списка с `jsonplaceholder`: простое отображение, пагинация, бесконечный скролл, а также фильтруемый и сортируемый список через кастомные селекты и `react-select`. |
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+---
 
-Note: This will impact Vite dev & build performances.
+## ✨ Ключевые особенности и решения
 
-## Expanding the ESLint configuration
+### 🔄 Работа с нативным Redux
+- Создание редьюсеров и типизация экшенов
+- Написание **thunk** для получения данных по API ([jsonplaceholder](https://jsonplaceholder.typicode.com))
+- Кастомные хуки: типизированный `useSelector`, хук `useAction` со всеми thunk
+- Управление состояниями загрузки (`loading`) и ошибки (`error`)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 📄 Список с пагинацией
+- Получение данных из API, сохранение в Redux и отображение с разбивкой на страницы
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### ♾️ Бесконечный скролл
+- Реализация подгрузки данных при скролле через `IntersectionObserver`
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 🎨 Кастомные селекты
+- Разработаны собственные селекты с одиночным и множественным выбором
+- Реализованы: открытие/закрытие выпадающего списка, стилизация выбранных пунктов
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 🔍 Фильтрация и сортировка
+- Фильтрация списка через `input` + кнопка поиска
+- Сортировка по выбранным опциям из селекта
+- Комбинирование фильтрации и сортировки одновременно
+
+### 📚 Библиотека `react-select`
+- Ознакомление с библиотекой через создание селектов, визуально похожих на кастомные и выполняющих те же функции
+
+---
+
+## 🛠️ Технологический стек
+
+| Категория | Технологии |
+|-----------|------------|
+| Фронтенд | React, TypeScript |
+| Управление состоянием | Redux (нативный) |
+| HTTP-запросы | Fetch / Axios (через thunk) |
+| Стилизация | CSS / CSS Modules |
+| UI-компоненты | Кастомные селекты, `react-select` |
+| Наблюдение за скроллом | IntersectionObserver |
+
+---
+
+## 🚀 Локальный запуск проекта
+
+```bash
+git clone https://github.com/Alexey917/RRT.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Запуск фронтенда
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install && npm run dev
 ```
+
+После запуска приложение будет доступно по адресу: http://localhost:5173 (или другому порту, который покажет Vite).
+
+## 📸 Скриншоты
+
+| Обычный вывод списка | С пагинация |С бесконечным скроллом | С бесконечным скроллом
+|:---:|:---:|:---:|
+| ![Обычный](./screenshots/1.png) | ![Пагинация](./screenshots/2.png) | ![Скролл](./screenshots/3.png) | ![Скролл](./screenshots/4.png)
+
+| Кастомный селект | Кастомный селект | React Select | React Select | Фильтрация + сортировка |
+|:---:|:---:|:---:|
+| ![Кастомный селект](./screenshots/5.png) | ![Кастомный селект](./screenshots/9.png) | ![React Select](./screenshots/7.png) | ![React Select](./screenshots/8.png) | ![Фильтрация](./screenshots/6.png) |
+
+📬 Контакты
+Связаться со мной можно через:
+
+<a href="https://vk.com/id321802975"> <img src="https://github.com/Alexey917/Alexey917/blob/main/assets/vk.png" width="32" height="32" alt="VK" /> </a> <a href="https://t.me/Alexey917"> <img src="https://github.com/Alexey917/Alexey917/blob/main/assets/tg.png" width="32" height="32" alt="Telegram" /> </a>
