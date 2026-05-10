@@ -60,9 +60,12 @@
 
 ```bash
 git clone https://github.com/Alexey917/RRT.git
+
 Запуск фронтенда
-bash
+
+```bash
 npm install && npm run dev
+
 После запуска приложение будет доступно по адресу: http://localhost:5173 (или другому порту, который покажет Vite).
 
 ## 📸 Скриншоты
