@@ -1,7 +1,7 @@
 
 import './App.css'
 import { CommentsList } from './components/CommetsList/CommentsList'
-// import { PostList } from './components/PostList/PostList'
+import { PostList } from './components/PostList/PostList'
 import TodoList from './components/TodoList/TodoList'
 import { UserList } from './components/UserList/UserList'
 
@@ -13,7 +13,7 @@ function App() {
       <hr style={{height: '2px', backgroundColor: 'green', width: '100%'}} />
       <TodoList />
       <hr style={{height: '2px', backgroundColor: 'green', width: '100%'}} />
-      {/* <PostList /> */}
+      <PostList />
       <hr style={{height: '2px', backgroundColor: 'green', width: '100%'}} />
       <CommentsList />
     </>
